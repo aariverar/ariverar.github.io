@@ -1,0 +1,211 @@
+  /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuentes y colores */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #d8d3d3;
+    justify-content: center;
+  }
+  
+
+  
+  /* Navegación */
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-left: 1rem;
+  }
+  
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .menu li a:hover {
+    background-color: #555;
+  }
+  
+  /* Secciones */
+  main section {
+    padding: 2rem;
+  }
+  
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    text-align: justify;
+    
+  }
+  
+  /* Encabezado y bienvenida */
+  #inicio {
+    text-align: center;
+    padding-top: 5rem;
+  }
+  
+  #inicio h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    
+}
+
+  .scrollable-content {
+    max-height: 400px; /* Altura máxima que deseas para el párrafo */
+    overflow-y: auto;  /* Habilita la barra de desplazamiento cuando sea necesario */
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-img {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  }
+
+  .card-img {
+    transition: transform 0.5s; /* Ajusta la duración de la animación según tus necesidades */
+    transform-origin: center center;
+  }
+  
+  .card-img:hover {
+    transform: rotateY(180deg) scale(1.5);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+  }
+  
+  /* Pie de página */
+  footer {
+    background-color: #333;
+    padding: 2rem 0;
+  }
+  
+  footer p {
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+          /* Estilos de las tarjetas */
+          .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .cardt {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .cardt-img {
+          width: 70px; /* Ajusta el tamaño de la imagen según tus necesidades */
+        }
+      
+        .cardt-img {
+          transition: transform 0.5s; /* Ajusta la duración de la animación según tus necesidades */
+          transform-origin: center center;
+        }
+        
+        .cardt-img:hover {
+          transform: rotateY(180deg) scale(1.5);
+        }
+        
+
+        .cardt:hover {
+          transform: rotateY(180deg) scale(1.5);
+        }
+
+        .cardt-content {
+            padding: 1.5rem;
+        }
+
+        .cardt-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cardt-content p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .main-content {
+          margin-top: 60px; /* Ajustar según la altura de tu header */
+          /* Otros estilos para el contenido principal, como el ancho máximo, el relleno, etc. */
+        }
+
+        .main-header {
+          position: fixed; /* Fija la posición del header en la parte superior de la página */
+          top: 0; /* Alinea el header con el borde superior de la ventana del navegador */
+          left: 0; /* Alinea el header con el borde izquierdo de la ventana del navegador */
+          width: 100%; /* Asegura que el header ocupe el ancho completo de la ventana del navegador */
+          z-index: 1000; /* Establece un alto valor de z-index para que el header aparezca por encima de otros elementos de la página */
+          /* Otros estilos para el header, como el color de fondo, la altura, el relleno, etc. */
+        }
