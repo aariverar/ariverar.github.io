@@ -4,8 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenido</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
   <link rel="stylesheet" href="css/estilos2.css">
   <script src="scripts.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* Centrar el bloque de código en el contenedor */
+    #content {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Personalizar el estilo del bloque de código */
+    .hljs {
+      background-color: rgb(27, 25, 25);
+      color: white; 
+      text-align: left;
+      width: 1000px; /* Establecer el ancho del bloque de código */
+      max-width: 100%; /* Asegurar que el bloque de código no exceda el ancho del contenedor */
+      overflow-x: auto; /* Agregar barra de desplazamiento horizontal si el contenido es demasiado ancho */
+      white-space: pre-wrap; /* Ajustar automáticamente las líneas de texto según el ancho del bloque */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 10px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilo responsivo para pantallas más pequeñas */
+    @media screen and (max-width: 800px) {
+      .hljs {
+        width: 90%; /* Cambiar el ancho del bloque de código en pantallas más pequeñas */
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
@@ -27,21 +57,61 @@
   <main class="main-content">
     <section id="inicio">
       <h1>Equipo de Automatización</h1>      
-      <p>Actualmente, los equipos de automatización de pruebas<br>
-         funcionales son un elemento clave en la garantía de calidad de software.<br>
-         Su trabajo se enfoca en optimizar la eficiencia y eficacia de las pruebas de software,<br>
-         y en garantizar la calidad de los productos de software.</p>
-      
-      <h3>Especialización</h3>
-      <p>Su especialización en herramientas de automatización de pruebas<br>
-         y técnicas de gestión de pruebas les permite mejorar los tiempos de prueba,<br>
-          reducir costos y mejorar la calidad del software en general.</p>
-      
-      <h3>Profesionales</h3>
-      <p>Este equipo está compuesto por profesionales con habilidades técnicas en programación<br>
-         y pruebas de software, y con conocimientos específicos en herramientas de automatización de pruebas.</p>
-      <p>También utilizan técnicas como la integración continua y la entrega continua <br>
-        para automatizar los procesos de prueba y acelerar el ciclo de vida de desarrollo de software.</p>
+      <div id="content">
+      <pre><code id="typedText" class="hljs"></code></pre>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    marked.use({ renderer: {
+      code(code, language) {
+        const validLang = !!(language && hljs.getLanguage(language));
+        const highlighted = validLang ? hljs.highlight(code, { language }).value : code;
+        return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
+      }
+    }});
+
+    const textoMd = `
+public class equipoDeAutomatizacion {
+
+@Before
+public static void QUE_HACEMOS(){
+String queHacemos = "Actualmente, los equipos de automatización de pruebas funcionales son un elemento clave en la garantía de calidad de software. Su trabajo se enfoca en optimizar la eficiencia y eficacia de las pruebas de software, y en garantizar la calidad de los productos de software.";
+
+    System.out.println(queHacemos);
+
+                                }
+
+@Test
+public static void ESPECIALIZACION(){
+String nuestraEspecializacion = "Nuestra especialización en herramientas de automatización de pruebas y técnicas de gestión de pruebas les permite mejorar los tiempos de prueba, reducir costos y mejorar la calidad del software en general.";
+
+    System.out.println(nuestraEspecializacion);
+
+                                    }
+
+@After
+public static void EQUIPO(){
+String nuestroEquipo = "Este equipo está compuesto por profesionales con habilidades técnicas en programación y pruebas de software, con conocimientos específicos en herramientas de automatización de pruebas. También utilizan técnicas como la integración continua y la entrega continua para automatizar los procesos de prueba y acelerar el ciclo de vida de desarrollo de software.";
+
+    System.out.println(nuestroEquipo);
+
+                            }
+}`;
+
+let currentIndex = 0;
+
+    function typeCharacter() {
+      if (currentIndex < textoMd.length) {
+        document.getElementById('typedText').textContent += textoMd.charAt(currentIndex);
+        currentIndex++;
+        setTimeout(typeCharacter, 45); // Controla la velocidad de escritura (en milisegundos)
+      }
+    }
+
+    typeCharacter();
+    
+  </script>
     </section>
 
     <!-- Añade aquí más secciones de contenido -->
