@@ -213,3 +213,79 @@
           z-index: 1000; /* Establece un alto valor de z-index para que el header aparezca por encima de otros elementos de la página */
           /* Otros estilos para el header, como el color de fondo, la altura, el relleno, etc. */
         }
+
+
+        .menuIcon {
+          position: fixed;
+          top: 110px;
+          left: 10px;
+          z-index: 2;
+          cursor: pointer;
+      }
+      
+      .menuIcon span {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background-color: black;
+          margin-bottom: 5px;
+          transition: all 0.3s;
+      }
+      
+      .menuIcon.open span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+      }
+      
+      .menuIcon.open span:nth-child(2) {
+          opacity: 0;
+      }
+      
+      .menuIcon.open span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+      
+      nav#floatingMenu {
+          position: fixed;
+          top: 0;
+          left: -250px;
+          width: 250px;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 1;
+          transition: transform 0.3s ease-in-out;
+      }
+      
+      nav#floatingMenu.show {
+          transform: translateX(250px);
+      }
+      
+      nav#floatingMenu ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+      }
+      
+      nav#floatingMenu li {
+          padding: 10px 20px;
+      }
+      
+      nav#floatingMenu a {
+          color: white;
+          text-decoration: none;
+      }
+
+      .menuIcon.open span {
+        background-color: white;
+    }
+    
+    .menuIcon.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menuIcon.open span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menuIcon.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
