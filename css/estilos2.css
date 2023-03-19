@@ -66,7 +66,7 @@
   /* Encabezado y bienvenida */
   #inicio {
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
   }
   
   #inicio h1 {
@@ -79,6 +79,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .logo-img {
+    width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
   }
   
   .card {
