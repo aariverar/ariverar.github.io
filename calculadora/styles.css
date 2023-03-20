@@ -1,0 +1,151 @@
+:root {
+    --primary-color: #4a69bd;
+    --secondary-color: #60a3bc;
+    --background-color: #333;
+    --text-color: #2c3e50;
+    --input-background-color: #ffffff;
+    --input-border-color: #bdc3c7;
+    --input-focus-border-color: #2980b9;
+    --button-background-color: #4a69bd;
+    --button-text-color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+form {
+    background-color: var(--input-background-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: var(--button-text-color);
+    padding-top: 10%;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    background-color: var(--input-background-color);
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilos para la tabla de casos de prueba */
+#test-case-table {
+    width: 100%;
+    max-width: 950px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#test-case-table th {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--input-border-color);
+}
+
+#test-case-table td {
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-background-color);
+    color: (var --text-color);
+}
+
+#test-case-table tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+#pdf-content {
+    font-family: Arial, sans-serif;
+    width: 100%;
+  }
+
+  #header {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  #footer {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    /* Estilos para pantallas pequeñas */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.align-right {
+    text-align: right;
+  }
