@@ -110,16 +110,17 @@ button:hover {
 #test-case-table th {
     background-color: var(--primary-color);
     color: var(--button-text-color);
-    padding: 10px;
-    text-align: left;
+    padding: 8px;
+    text-align: center;
     border: 1px solid var(--input-border-color);
 }
 
 #test-case-table td {
-    padding: 10px;
+    padding: 8px;
     border: 1px solid var(--input-border-color);
     background-color: var(--input-background-color);
     color: (var --text-color);
+    text-align: center;
 }
 
 #test-case-table tbody tr:nth-child(odd) {
