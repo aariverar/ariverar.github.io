@@ -76,11 +76,12 @@
                 <th>Nombre del Caso de Prueba</th>
                 <!-- <th>Complejidad</th> -->
                 <th>Hrs. Diseño</th>
-                <th>Hrs. Desarrollo</th>
-                <th>Hrs. Refactorización</th>
-                <th>Hrs. Mantenimiento</th>
-                <th>Hrs. Documentación</th>
+                <th>Hrs. Dev.</th>
+                <th>Hrs. Ref.</th>
+                <th>Hrs. Mant.</th>
+                <th>Hrs. Doc.</th>
                 <th>Hrs. Totales</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -127,6 +128,19 @@
                 <td>${hoursDoc}</td>
                 <td>${hoursTotal}</td>
             `;
+
+              // Crea una celda adicional con el icono de basurero
+                const deleteCell = document.createElement('td');
+                const deleteIcon = document.createElement('span');
+                deleteIcon.textContent = '🗑️';
+                deleteIcon.style.cursor = 'pointer';
+                deleteCell.appendChild(deleteIcon);
+                newRow.appendChild(deleteCell);
+
+                // Agrega un evento de clic al icono de basurero para eliminar la fila
+                deleteIcon.addEventListener('click', function () {
+                    newRow.remove();
+                });
 
             // Agrega la nueva fila a la tabla
             document.querySelector('#test-case-table tbody').appendChild(newRow);
