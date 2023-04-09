@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>CheckList</title>
+</head>
+
+<body>
+  <div class="contenedor-centrado">
+    <!-- Agrega un div contenedor para el iframe -->
+    <div id="iframe-container"></div>
+  </div>
+  
+  <script>
+    function insertIframe() {
+      const username = 'abraham.rivera@tsoftlatam.com';
+      const password = 'Tsoft2021!';
+      const credentials = username + ':' + password;
+      const encodedCredentials = btoa(credentials);
+
+      const iframeSrc = `https://app.powerbi.com/reportEmbed?reportId=5f4171c1-de87-40b4-870e-0884ad45731d&autoAuth=true&ctid=ed811312-91e0-448f-9cc9-9e9e15b6b836&Authorization=Basic ${encodedCredentials}`;
+      
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('title', 'Dashboard_MiBanco_QA v.Web');
+      iframe.setAttribute('width', '1536');
+      iframe.setAttribute('height', '864');
+      iframe.setAttribute('src', iframeSrc);
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowFullScreen', 'true');
+
+      const container = document.getElementById('iframe-container');
+      container.appendChild(iframe);
+    }
+
+    // Llama a la función para insertar el iframe
+    insertIframe();
+  </script>
+</body>
+
+</html>
