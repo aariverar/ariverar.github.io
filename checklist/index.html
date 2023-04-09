@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.17.6/docxtemplater.min.js"></script>
+    <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>CheckList</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <nav>
+      <h1>CHECKLIST - Pruebas de Rendimiento</h1>
+    </nav>
+  </header>
+  <div class="contenido">
+    <form action="/my-handling-form-page" method="post" id="formulario1">
+      <ul>
+        <h3>Alcance General</h3>
+        <li>
+          <label for="select1">Nombre del Cliente o Servicio:</label>
+          <select id="select1" class="tooltip" title="Se debe indicar el nombre del Cliente o Servicio">
+            <option value=""></option>
+            <option value="Mi Banco">Mi Banco</option>
+          </select>
+          <label for="input1">Nombre del Proyecto:</label>
+          <input type="text" id="input1" name="input1" class="tooltip" title="Se debe ingresar el nombre del proyecto de performance">
+          <label for="input2">Nombre del Aplicativo:</label>
+          <input type="text" id="input2" name="input2" class="tooltip" title="Se debe ingresar el nombre del aplicativo al cual se le realizará las pruebas de performance">
+        </li>
+        <br>
+        <li>
+          <label for="input3">Nombre del Analista QA:</label>
+          <input type="text" id="input3" name="input3" class="tooltip" title="Se debe ingresar el nombre del responsable por parte del cliente, quien se encargará de realizar el monitoreo de la aplicación cuando se realice la prueba de performance">
+          <label for="select2">Tipo de Prueba a Realizar:</label>
+          <select id="select2" class="tooltip" title="Se debe seleccionar que tipo de prueba se realizará en el proyecto">
+            <option value=""></option>
+            <option value="Prueba de Carga">Prueba de Carga</option>
+            <option value="Prueba de Stress">Prueba de Stress</option>
+            <option value="Prueba de Pico">Prueba de Pico</option>
+            <option value="Prueba de Estabilidad">Prueba de Estabilidad</option>
+            <option value="Otros">Otros</option>
+          </select>
+          <label for="select3">Ambiente de Prueba:</label>
+          <select id="select3" class="tooltip" title="Se debe seleccionar en que ambiente se ejecutará la prueba de performance">
+            <option value=""></option>
+            <option value="Desarrollo">Desarrollo</option>
+            <option value="Calidad">Calidad</option>
+            <option value="Pre-Producción">Pre-Producción</option>
+            <option value="Producción">Producción</option>
+          </select> 
+        </li>
+        <br>
+        <li>
+          <label for="select4">Tipo de Red (Acceso):</label>
+          <select id="select4" class="tooltip" title="Se debe seleccionar en que tipo de red está desplegado el proyecto">
+            <option value=""></option>
+            <option value="LAN Interna">LAN Interna</option>
+            <option value="WAN Externa">WAN Externa</option>
+          </select>
+          <label for="select5">¿Existen Implementos de Seguridad?</label>
+          <select id="select5" class="tooltip" title="Se debe indicar si actualmente existen implementos u objetos de seguridad, tipo captchas o algun complemento que no permita la interación de un robot">
+            <option value=""></option>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+          <label for="datepicker">Fecha Actual:</label>
+          <input type="date" id="datepicker">
+        </li>
+        <br>
+        <li>
+          <label for="textarea1">¿Cuál es el problema o el objetivo de la prueba?</label>
+          <br>
+          <textarea id="textarea1" name="textarea1" rows="4" cols="50" class="tooltip" title="Ingrese el objetivo de la prueba a modo de comentario o como lo indica la necesidad del proyecto"></textarea>
+          <label for="textarea2">¿Cuáles son servicios o flujos a medir?</label>
+          <br>
+          <textarea id="textarea2" name="textarea2" rows="4" cols="50" class="tooltip" title="Ingrese o enumere los servicios o flujos que serán expuestos a la prueba de performance"></textarea>
+          <label for="textarea3">¿Cuáles son los criterios de medición de la prueba?</label>
+          <br>
+          <textarea id="textarea3" name="textarea3" rows="4" cols="50" class="tooltip" title="Ingrese cuales son los criterios de medición para la prueba de performance, apóyese con el equipo técnico del proyecto para definirlos"></textarea>
+        </li>
+        <br>
+        <li>
+          <label for="select6">Tipo de Operación o Método:</label>
+          <select id="select6" class="tooltip" title="Se debe seleccionar que tipo de operación o método serán probados en performance">
+            <option value=""></option>
+            <option value="Consultas">Consultas</option>
+            <option value="Transacciones">Transacciones</option>
+          </select>
+          <label for="input4">Versión de la aplicación instalada:</label>
+          <input type="text" id="input4" name="input4" class="tooltip" title="Se debe indicar cual es la versión de la aplicación expuesta a performance">
+          <label for="input5">Capacidad del ambiente de QA respecto al de Producción:</label>
+          <input type="text" id="input5" name="input5" class="tooltip" title="Se debe indicar cual es la proporción entre el ambiente de QA y el de producción, Ejem. de 1 a 3">
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="contenido">
+    <form action="/my-handling-form-servicios" method="post" id="formulario2">
+      <ul>
+        <h3>Alcance para Servicios</h3>
+        <li>
+          <label for="input6">Tiempos de respuesta esperados:</label>
+          <input type="text" id="input6" name="input6" class="tooltip" title="Se debe ingresar el tiempo en segundos esperado por las respuestas del servicio">
+          <label for="input7">Número máximo de usuarios simultáneos:</label>
+          <input type="text" id="input7" name="input7" class="tooltip" title="Se debe ingresar el número máximo de usuario simultaneos que soporta el servicio">
+          <label for="input8">Cant. máxima de Transacciones por seg.:</label>
+          <input type="text" id="input8" name="input8" class="tooltip" title="Se debe ingresar la cantidad máxima de transacciones por segundo al ejecutar el servicio">
+        </li>
+        <br>
+        <li>
+          <label for="input9">[Carga Normal] Cant. usuarios x hora:</label>
+          <input type="text" id="input9" name="input9"class="tooltip" title="Se debe ingresar la cantidad de usuarios por hora en un ambiente de Carga Normal">
+          <label for="input10">[Carga Pico] Cant. usuarios x hora:</label>
+          <input type="text" id="input10" name="input10" class="tooltip" title="Se debe ingresar la cantidad de usuarios por hora en un ambiente de Carga Pico">
+          <label for="input11">Definir Transacciones x seg.:</label>
+          <input type="text" id="input11" name="input11" class="tooltip" title="Se debe ingresar o definir las transacciones realizas por segundo">
+        </li>
+        <br>
+        <li>
+          <label for="input12">[Carga Normal] Cant. Transacciones x hora:</label>
+          <input type="text" id="input12" name="input12" class="tooltip" title="Se debe ingresar la cantidad de transacciones por hora en un ambiente de Carga Normal">
+          <label for="input13">[Carga Pico] Cant. Transacciones x hora:</label>
+          <input type="text" id="input13" name="input13" class="tooltip" title="Se debe ingresar la cantidad de transacciones por hora en un ambiente de Carga Pico">
+          <label for="input14">% de tolerancia de errores por time out:</label>
+          <input type="text" id="input14" name="input14" class="tooltip" title="Se debe ingresar o definir el procentaje de tolerencia de errores ante TimeOuts">
+        </li>
+        <br>
+        <li>
+          <label for="select7">¿El servicio requiere de autenticación?</label>
+          <select id="select7">
+            <option value=""></option>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+          <label for="select8">¿Se requiere re-utilizar la sesión autenticada?</label>
+          <select id="select8">
+            <option value=""></option>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+          <label for="select9">¿Se configurará un timeout para las peticiones?</label>
+          <select id="select9">
+            <option value=""></option>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+        </li>
+        <br>
+        <li>
+          <label for="datepicker2">Fecha de la Ejecución:</label>
+          <input type="date" id="datepicker2">
+          <label for="input15">Hora de la Ejecución:</label>
+          <input type="text" id="input15" name="input15" class="tooltip" title="Se debe ingresar la hora de la ejecución. Ejem: 10:00 HRS.">
+          <label for="input16">Duración total de la Prueba:</label>
+          <input type="text" id="input16" name="input16" class="tooltip" title="Se debe ingresar la duración de la prueba">
+        </li>
+        <br>
+        <li>
+          <label for="textarea4">Especificar los datos variables:</label>
+          <br>
+          <textarea id="textarea4" name="textarea4" rows="4" cols="50" class="tooltip" title="Se debe ingresar o especificar los datos variables para la ejecución del servicio"></textarea>
+          <label for="textarea5">Especificar restricciones de los datos:</label>
+          <br>
+          <textarea id="textarea5" name="textarea5" rows="4" cols="50" class="tooltip" title="Se debe ingresar o especificar las restricciones a nivel de data"></textarea>
+          <label for="textarea6">Consideraciones adicionales  a nivel de insfraestructura:</label>
+          <br>
+          <textarea id="textarea6" name="textarea6" rows="4" cols="50" class="tooltip" title="Se debe ingresar algunas consideraciones adicionales sobre la infraestructura de la ejecución"></textarea>
+        </li>
+      </ul>
+    </form>
+  </div>
+    <br>
+  <div class="boton-descarga-container">
+    <button id="generateButton" class="boton-descarga">Generar Documento</button>
+  </div>
+</body>
+
+</html>
