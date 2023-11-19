@@ -1,25 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memoria Técnica</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Contenido de la página -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.17.6/docxtemplater.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="app.js"></script>
-    <script src="mas.js"></script>
-    <script src="menos.js"></script>
-    <script src="alcance.js"></script>
-    <script src="pre.js"></script>
-    <link rel="stylesheet" href="styles.css">
-
     <header class="main-header">
         <nav>
             <h1>Memoria Técnica - Automatización</h1>
@@ -27,14 +16,12 @@
     </header>
 
     <form id="formulario">
-        <ul>
-            <h3>Agregar Información:</h3>
+        <fieldset>
+            <legend>Agregar Información:</legend>
             <li>
                 <label for="select1">Selecciona Cliente:</label>
                 <select id="select1">
                     <option value="MI BANCO">MI BANCO</option>
-                    <option value="NIUBIZ">NIUBIZ</option>
-                    <option value="LA POSITIVA">LA POSITIVA</option>
                 </select>
 
                 <label for="input1">Nombre de Script:</label>
@@ -47,12 +34,10 @@
             <li>
                 <label for="select2">Selecciona Framework:</label>
                 <select id="select2">
-                    <option value="SELENIUM WEBDRIVER">SELENIUM WEBDRIVER</option>
-                    <option value="UFT">UFT</option>
-                    <option value="KARATE">KARATE</option>
-                    <option value="UFT MOBILE">UFT MOBILE</option>
-                    <option value="UFT SERVICIOS">UFT SERVICIOS</option>
-                    <option value="SELENIUM APPIUM">SELENIUM APPIUM</option>
+                    <option value="SELENIUM WEBDRIVER">UFT ONE - WEB</option>
+                    <option value="UFT">UFT ONE - MOBILE</option>
+                    <option value="KARATE">UFT ONE - DESKTOP</option>
+                    <option value="UFT MOBILE">UFT ONE - API</option>
                 </select>
 
                 <label for="input3">Nombre del Automatizador:</label>
@@ -84,9 +69,10 @@
                     </div>
                 </div>
             </li>
-            <br>
-            <br>
-            <h3>Agregar Campos de Entrada (INPUTS):</h3>
+        </fieldset>
+
+        <fieldset>
+            <legend>Agregar Campos de Entrada (INPUTS):</legend>
             <li>
                 <!-- Nueva sección para agregar campos -->
                 <div class="inputs-container">
@@ -103,9 +89,10 @@
                     </div>
                 </div>
             </li>
-            <br>
-            <br>
-            <h3>Agregar Campos de Salida (OUTPUTS):</h3>
+        </fieldset>
+
+        <fieldset>
+            <legend>Agregar Campos de Salida (OUTPUTS):</legend>
             <li>
                 <!-- Nueva sección para agregar campos -->
                 <div class="inputs-container2">
@@ -120,11 +107,22 @@
                     </div>
                 </div>
             </li>
-        </ul>
+        </fieldset>
     </form>
+
     <div class="boton-descarga-container">
         <button id="generateButton" class="boton-descarga">Generar Documento</button>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.17.6/docxtemplater.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+    <script src="mas.js"></script>
+    <script src="menos.js"></script>
+    <script src="alcance.js"></script>
+    <script src="pre.js"></script>
 </body>
 
 </html>
